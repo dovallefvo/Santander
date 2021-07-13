@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+   // id 'checkstyle'
+   // id 'pmd'
+}
+
+group 'com.dovalle'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+/* CHECKSTYLE and PMD plugins
+checkstyle {
+    toolVersion = '8.21'
+    showViolations = true
+    configFile = file("config/checkstyle/checkstyle.xml")
+}
+
+pmd {
+    ruleSetFiles = file("config/pmd/ruleset.xml")
+    toolVersion = '6.15.0'
+    ignoreFailures = true
+    consoleOutput = true
+}
+*/
