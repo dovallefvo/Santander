@@ -25,6 +25,7 @@ public class MyList {
 
     private void loadNames(){
         lstNames = new ArrayList<>();
+        lstNames.add("Priest Mirin");
         lstNames.add("John");
         lstNames.add("Mary");
         lstNames.add("Iza");
