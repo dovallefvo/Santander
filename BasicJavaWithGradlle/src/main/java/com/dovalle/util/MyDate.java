@@ -52,7 +52,7 @@ public class MyDate {
 
     public String showDetails(){
         String details = String.format("\nDate default object %s \nDate instant object:%s", this.getDateDefault(), this.getDateInstant());
-        details = details.concat(String.format("\nCalendar date objetc:\n%tc \n%tF \n%tD \n%tr \n%tT", dateCalendar, dateCalendar, dateCalendar, dateCalendar, dateCalendar));
+        details = details.concat(String.format("\n\nCalendar date objetc and its formats:\n%tc \n%tF \n%tD \n%tr \n%tT", dateCalendar, dateCalendar, dateCalendar, dateCalendar, dateCalendar));
         return details;
     }
 
@@ -69,10 +69,10 @@ public class MyDate {
 
     public String showDateJava8 (){
         StringBuilder dates = new StringBuilder();
-        dates.append("New Date class from Java 8:\n")
-            .append(String.format("Local date: \n%s \nDate -1 month: \n%s", localDate, localDate.minusMonths(1)))
-            .append(String.format("\nLocal Time: \n%s \nLocal time +45 minutes: \n%s", localTime, localTime.plusMinutes(45)))
-            .append(String.format("\nLocal Date Time: \n%s \nLocal date time +1 year +2weeks +50seconds \n%s", localDateTime, localDateTime.plusYears(1).plusWeeks(2).plusSeconds(50)));
+        dates.append("\nNew Date class from Java 8:\n")
+            .append(String.format("\nLocal date: \n%s \nDate -1 month: \n%s", localDate, localDate.minusMonths(1)))
+            .append(String.format("\n\nLocal Time: \n%s \nLocal time +45 minutes: \n%s", localTime, localTime.plusMinutes(45)))
+            .append(String.format("\n\nLocal Date Time: \n%s \nLocal date time +1 year +2weeks +50seconds \n%s", localDateTime, localDateTime.plusYears(1).plusWeeks(2).plusSeconds(50)));
         return dates.toString();
     }
 }
