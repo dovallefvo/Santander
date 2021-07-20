@@ -8,10 +8,12 @@ import java.util.Queue;
 
 public class MyQueue {
     private Queue<Person> bankQueue;
+    private Person myPerson;
 
     public MyQueue(){
         this.bankQueue = new LinkedList<>();
-        this.bankQueue.addAll(new Person().sampleListPerson());
+        this.myPerson = new Person();
+        this.bankQueue.addAll(myPerson.sampleListPerson());
     }
 
     public Queue<Person> getBankQueue() {

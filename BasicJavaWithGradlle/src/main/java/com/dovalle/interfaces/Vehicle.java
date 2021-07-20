@@ -2,7 +2,7 @@ package com.dovalle.interfaces;
 
 import com.dovalle.enums.BrandCar;
 
-public interface Car {
+public interface Vehicle {
     int wheels = 4;
     String model = "";
     default Integer qtdWheels(){

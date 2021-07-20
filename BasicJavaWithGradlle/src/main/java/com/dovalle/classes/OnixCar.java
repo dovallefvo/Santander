@@ -1,9 +1,9 @@
 package com.dovalle.classes;
 
 import com.dovalle.enums.BrandCar;
-import com.dovalle.interfaces.Car;
+import com.dovalle.interfaces.Vehicle;
 
-public class OnixCar implements Car {
+public class OnixCar implements Vehicle {
     @Override
     public String brand() {
         return BrandCar.CHEVROLET.getNameBrand();

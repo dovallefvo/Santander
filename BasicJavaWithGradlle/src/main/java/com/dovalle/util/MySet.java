@@ -25,8 +25,8 @@ public class MySet {
 
     public String showNotes(){
         StringBuilder notes = new StringBuilder();
-        notes.append(String.format("\nNotes in HashSet, which doesn't keep the insertion order:\n%s", this.hstNotes));
-        notes.append(String.format("\nNotes in LinkedHashSet, which keeps the insertion order:\n%s", this.lksNotes));
+        notes.append(String.format("\nNotes in HashSet, which doesn't keep the insertion order, but it has MORE performance:\n%s", this.hstNotes));
+        notes.append(String.format("\nNotes in LinkedHashSet, which keeps the insertion order, but it has LESS performance:\n%s", this.lksNotes));
         return notes.toString();
     }
 }
