@@ -1,9 +1,8 @@
 package com.dovalle.classes;
 
+import com.dovalle.interfaces.SimpleLambda;
 import com.dovalle.interfaces.Vehicle;
 import com.dovalle.util.*;
-
-import java.util.Arrays;
 
 public class Initializer {
     public static void main(String[] args) {
@@ -13,8 +12,8 @@ public class Initializer {
         var myCar = new OnixCar();
         var myMotocycle = new TitanMotocycle();
         var myRents = new RentVehicle<Vehicle>();
-        System.out.println(myCar.showDetails());
-        System.out.println(myMotocycle.showDetails());
+        System.out.println(myCar);
+        System.out.println(myMotocycle);
         myRents.rent(myCar);
         myRents.rent(myMotocycle);
         System.out.println(myRents.showRents());
@@ -42,5 +41,13 @@ public class Initializer {
 
         var myStream = new MyStream();
         System.out.println(myStream.showStreamDetails());
+
+        MyLambda.callSimpleLambda();
+        MyLambda.callConsumerLambda();
+        MyLambda.callFunctionLambda();
+        MyLambda.callPredicateLambda();
+        MyLambda.callSupplierLambda();
     }
+
+
 }

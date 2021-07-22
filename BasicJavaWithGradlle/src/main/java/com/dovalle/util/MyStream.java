@@ -20,7 +20,10 @@ public class MyStream {
         details.append(String.format("\n\nStreams implementing \nCounting elements: %s", this.myPersonsList.stream().count()));
         details.append("\nMaximum length Name: " + this.myPersonsList.stream().max(Comparator.comparingInt(Person::getIdNumber)).get().getIdNumber());
         details.append("\nMinimum length Name: " + this.myPersonsList.stream().min(Comparator.comparingInt(Person::getIdNumber)).get().getIdNumber());
-        details.append("\nReturn persons that contains I in their names: " + this.myPersonsList.stream().filter((person) -> person.getName().toLowerCase().contains("i")).collect(Collectors.toList()));
+        details.append("\nReturn persons that contains I in their names: " +
+                this.myPersonsList.stream()
+                        .filter((person) -> person.getName().toLowerCase().contains("i"))//filter names that contains letter 'i'
+                        .collect(Collectors.toList()));//collect the filtered names to a List
         details.append("\nMap persons and quantity of letters that contains in their names: " + this.myPersonsList.stream().map(person -> person.getName().concat(" - ").concat(String.valueOf(person.getName().length()))).collect(Collectors.toList()));
 
         return details.toString();

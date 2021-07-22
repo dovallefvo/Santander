@@ -21,4 +21,9 @@ public class TitanMotocycle implements Vehicle {
     public String brand() {
         return this.BRAND;
     }
+
+    @Override
+    public String toString() {
+        return this.showDetails();
+    }
 }

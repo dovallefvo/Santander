@@ -13,4 +13,9 @@ public class OnixCar implements Vehicle {
     public String getModel() {
         return "Onix";
     }
+
+    @Override
+    public String toString() {
+        return this.showDetails();
+    }
 }

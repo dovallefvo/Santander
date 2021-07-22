@@ -97,4 +97,9 @@ public class Person implements Comparable<Person>{
         //implementing Comparable interface is possbile to sort the object as my needs.
         return this.birthDay.getYear() - p.getBirthDay().getYear();
     }
+
+    @Override
+    public String toString() {
+        return this.showPersonDetails();
+    }
 }
