@@ -47,6 +47,13 @@ public class Initializer {
         MyLambda.callFunctionLambda();
         MyLambda.callPredicateLambda();
         MyLambda.callSupplierLambda();
+
+        var myThread = new MyThread();
+        myThread.showSimpleThreads();
+
+        var myParalelStream = new MyParalelStream();
+        myParalelStream.showTimesOfProcessing();
+
     }
 
 
