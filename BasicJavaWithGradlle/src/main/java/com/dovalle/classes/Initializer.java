@@ -1,7 +1,8 @@
 package com.dovalle.classes;
 
-import com.dovalle.interfaces.SimpleLambda;
 import com.dovalle.interfaces.Vehicle;
+import com.dovalle.trials.BasicTrial01;
+import com.dovalle.trials.BasicTrial03;
 import com.dovalle.util.*;
 
 public class Initializer {
@@ -47,13 +48,21 @@ public class Initializer {
         MyLambda.callFunctionLambda();
         MyLambda.callPredicateLambda();
         MyLambda.callSupplierLambda();
-
+        /*
         var myThread = new MyThread();
         myThread.showSimpleThreads();
 
         var myParalelStream = new MyParalelStream();
         myParalelStream.showTimesOfProcessing();
 
+        var myUrl = new MyUrl();
+        myUrl.showContent();
+        */
+        //Link to github Advanced Java:
+        //https://github.com/jpbaterabsb/java-avancado
+
+        System.out.println("\n\nBasisc Trial 03. Type the six values in your console:\n");
+        BasicTrial03.runTrial03Simple();
     }
 
 
