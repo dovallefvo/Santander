@@ -1,29 +1,78 @@
 package com.dovalle.classes;
 
 import com.dovalle.interfaces.Vehicle;
-import com.dovalle.trials.BasicTrial01;
-import com.dovalle.trials.BasicTrial03;
+import com.dovalle.net.MyUrl;
 import com.dovalle.util.*;
+import com.dovalle.trials.*;
+import com.dovalle.database.base.*;
+import com.dovalle.database.entity.*;
 
 public class Initializer {
     public static void main(String[] args) {
-        System.out.println("******\nMy first Java program using Gradle\n******");
+        /*
+        basicConcepts();
 
-        System.out.println("******\nImplementing Interfaces, Enums and Generics:\n******" );
-        var myCar = new OnixCar();
-        var myMotocycle = new TitanMotocycle();
-        var myRents = new RentVehicle<Vehicle>();
-        System.out.println(myCar);
-        System.out.println(myMotocycle);
-        myRents.rent(myCar);
-        myRents.rent(myMotocycle);
-        System.out.println(myRents.showRents());
+        formattingDates();
 
-        var mydate = new MyDate();
-        System.out.println(mydate.showDetails());
-        System.out.println(mydate.formatter());
-        System.out.println(mydate.showDateJava8());
+        manipulatingListSetQueue();
 
+        processingThreadsAndHttp();
+
+        callingStreamsAndLambdas();
+        //Link to github Advanced Java:
+        //https://github.com/jpbaterabsb/java-avancado
+
+        solvingBasicTrials();
+
+        makingJDBCConnection();
+        */
+        var entityDB = new EntityDatabase();
+        var personList = new Person().sampleListPerson();
+        for (Person p : personList) {
+            if (p.getStateProvinceOrigin() != null){
+                entityDB.add(p.getStateProvinceOrigin());
+            }
+            entityDB.add(p);
+        }
+        entityDB.closeResources();
+    }
+
+    private static void makingJDBCConnection() {
+        var mysqlCon = new MysqlDbConnection();
+        mysqlCon.testConnection();
+    }
+
+    private static void solvingBasicTrials() {
+        System.out.println("\n\nBasisc Trial 03. Type the six values in your console:\n");
+        BasicTrial01.runTrial01();
+        BasicTrial02.runTrial02();
+        BasicTrial03.runTrial03Simple();
+        //JDBC implementation
+    }
+
+    private static void callingStreamsAndLambdas() {
+        var myStream = new MyStream();
+        System.out.println(myStream.showStreamDetails());
+
+        MyLambda.callSimpleLambda();
+        MyLambda.callConsumerLambda();
+        MyLambda.callFunctionLambda();
+        MyLambda.callPredicateLambda();
+        MyLambda.callSupplierLambda();
+
+        var myParalelStream = new MyParalelStream();
+        myParalelStream.showTimesOfProcessing();
+    }
+
+    private static void processingThreadsAndHttp() {
+        var myThread = new MyThread();
+        myThread.showSimpleThreads();
+
+        var myUrl = new MyUrl();
+        myUrl.showContent();
+    }
+
+    private static void manipulatingListSetQueue() {
         var myList = new MyList();
         System.out.println(myList.compareListOrder());
 
@@ -39,30 +88,27 @@ public class Initializer {
 
         var myComparator = new MyComparator();
         System.out.println(myComparator.showComparatorDetails());
+    }
 
-        var myStream = new MyStream();
-        System.out.println(myStream.showStreamDetails());
+    private static void formattingDates() {
+        var mydate = new MyDate();
+        System.out.println(mydate.showDetails());
+        System.out.println(mydate.formatter());
+        System.out.println(mydate.showDateJava8());
+    }
 
-        MyLambda.callSimpleLambda();
-        MyLambda.callConsumerLambda();
-        MyLambda.callFunctionLambda();
-        MyLambda.callPredicateLambda();
-        MyLambda.callSupplierLambda();
-        /*
-        var myThread = new MyThread();
-        myThread.showSimpleThreads();
+    private static void basicConcepts() {
+        System.out.println("******\nMy first Java program using Gradle\n******");
 
-        var myParalelStream = new MyParalelStream();
-        myParalelStream.showTimesOfProcessing();
-
-        var myUrl = new MyUrl();
-        myUrl.showContent();
-        */
-        //Link to github Advanced Java:
-        //https://github.com/jpbaterabsb/java-avancado
-
-        System.out.println("\n\nBasisc Trial 03. Type the six values in your console:\n");
-        BasicTrial03.runTrial03Simple();
+        System.out.println("******\nImplementing Interfaces, Enums and Generics:\n******" );
+        var myCar = new OnixCar();
+        var myMotocycle = new TitanMotocycle();
+        var myRents = new RentVehicle<Vehicle>();
+        System.out.println(myCar);
+        System.out.println(myMotocycle);
+        myRents.rent(myCar);
+        myRents.rent(myMotocycle);
+        System.out.println(myRents.showRents());
     }
 
 

@@ -5,7 +5,7 @@ import java.util.StringTokenizer;
 
 public class BasicTrial01 {
 
-    public void runTrial01(){
+    public static void runTrial01(){
         BufferedReader br;
         StringTokenizer st;
         int a;
