@@ -12,7 +12,7 @@ public class EntityDatabase {
 
     public EntityDatabase(){
         try {
-            this.factoryDB = Persistence.createEntityManagerFactory("basicJPA");
+            this.factoryDB = Persistence.createEntityManagerFactory("basicHibernateJPA");
             this.manager = this.factoryDB.createEntityManager();
             System.out.printf("\nSUCESS Create the factory and manager of entities.");
         }

@@ -9,7 +9,7 @@ import com.dovalle.database.entity.*;
 
 public class Initializer {
     public static void main(String[] args) {
-        /*
+
         basicConcepts();
 
         formattingDates();
@@ -19,13 +19,15 @@ public class Initializer {
         processingThreadsAndHttp();
 
         callingStreamsAndLambdas();
-        //Link to github Advanced Java:
-        //https://github.com/jpbaterabsb/java-avancado
 
         solvingBasicTrials();
 
         makingJDBCConnection();
-        */
+
+        insertingWithHibernateJPA();
+    }
+
+    private static void insertingWithHibernateJPA() {
         var entityDB = new EntityDatabase();
         var personList = new Person().sampleListPerson();
         for (Person p : personList) {
@@ -38,6 +40,7 @@ public class Initializer {
     }
 
     private static void makingJDBCConnection() {
+        //JDBC implementation
         var mysqlCon = new MysqlDbConnection();
         mysqlCon.testConnection();
     }
@@ -47,7 +50,6 @@ public class Initializer {
         BasicTrial01.runTrial01();
         BasicTrial02.runTrial02();
         BasicTrial03.runTrial03Simple();
-        //JDBC implementation
     }
 
     private static void callingStreamsAndLambdas() {

@@ -18,6 +18,7 @@ public class StateProvince implements DomainValue {
     //sample how to do a bidirectional mapping between Person and State
     @OneToMany(mappedBy="code", cascade = CascadeType.ALL, orphanRemoval = true)
      */
+    @Transient
     private List<Person> personsBirthInto;
 
     public StateProvince(){

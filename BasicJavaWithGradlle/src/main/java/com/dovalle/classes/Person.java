@@ -13,11 +13,12 @@ public class Person implements Comparable<Person>{
     @Column
     private LocalDate birthDay;
     @Column
-    private Optional<String> phoneNumber;
+    //private Optional<String> phoneNumber;// Optional doesn't work with Hibernate JPA
+    private String phoneNumber;
 
     @ManyToOne (fetch = FetchType.EAGER)
     private StateProvince stateProvinceOrigin;
-
+    @Transient
     private List<Person> lstPerson;
 
     public Person(){
@@ -25,7 +26,7 @@ public class Person implements Comparable<Person>{
         this.birthDay = LocalDate.now();
         this.idNumber = 0;
         this.lstPerson = new ArrayList<>();
-        this.phoneNumber = Optional.ofNullable(null);
+        this.phoneNumber = "";
         this.stateProvinceOrigin = null;
     }
 
@@ -33,7 +34,7 @@ public class Person implements Comparable<Person>{
         this.name = namePerson;
         this.birthDay = birthDay;
         this.lstPerson = new ArrayList<>();
-        this.phoneNumber = Optional.ofNullable(null);
+        this.phoneNumber = "";
         this.stateProvinceOrigin = null;
     }
 
@@ -42,7 +43,7 @@ public class Person implements Comparable<Person>{
         this.birthDay = birthDay;
         this.idNumber = idNumber;
         this.lstPerson = new ArrayList<>();
-        this.phoneNumber = Optional.ofNullable(null);
+        this.phoneNumber = "";
         this.stateProvinceOrigin = null;
     }
 
@@ -51,7 +52,7 @@ public class Person implements Comparable<Person>{
         this.birthDay = birthDay;
         this.idNumber = idNumber;
         this.lstPerson = new ArrayList<>();
-        this.phoneNumber = Optional.ofNullable(phoneNumber);
+        this.phoneNumber = phoneNumber;
         this.stateProvinceOrigin = null;
     }
 
@@ -60,7 +61,7 @@ public class Person implements Comparable<Person>{
         this.birthDay = birthDay;
         this.idNumber = idNumber;
         this.lstPerson = new ArrayList<>();
-        this.phoneNumber = Optional.ofNullable(phoneNumber);
+        this.phoneNumber = phoneNumber;
         this.stateProvinceOrigin = stateProvinceBirth;
     }
 
@@ -88,11 +89,11 @@ public class Person implements Comparable<Person>{
         this.idNumber = idNumber;
     }
 
-    public Optional<String> getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Optional<String> phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -120,7 +121,7 @@ public class Person implements Comparable<Person>{
 
     public String showPersonDetails(){
         StringBuilder details = new StringBuilder();
-        details.append(String.format("\nName: %s, Birthday: %s, Social ID number: %s, Phone Number: %s", this.name, this.birthDay, this.idNumber, this.phoneNumber.orElse("not informed")));
+        details.append(String.format("\nName: %s, Birthday: %s, Social ID number: %s, Phone Number: %s", this.name, this.birthDay, this.idNumber, this.phoneNumber));
         return details.toString();
     }
 
