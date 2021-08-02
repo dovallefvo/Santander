@@ -8,6 +8,7 @@ public class SpringWithMavenApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringWithMavenApplication.class, args);
+		System.out.println("\n\nHello, my Spring app is running now");
 	}
 
 }

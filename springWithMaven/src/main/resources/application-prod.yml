@@ -1,0 +1,20 @@
+#YML config file works as chain of values, more legible than properties.
+app:
+  message: This is the property for the ${spring.application.name} for PRODUCTION enviroment using an YML file config
+
+server:
+  port: 8080
+  #this value can be changed, if in the terminal/command line
+  #then be typed: mvnw spring-boot:run -Dserver.port=8055
+  #The command has more priority than .yml file
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/santander
+    username: root
+    password: passord
