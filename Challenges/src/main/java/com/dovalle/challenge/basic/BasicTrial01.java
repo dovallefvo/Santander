@@ -1,11 +1,11 @@
-package com.dovalle.trials;
+package com.dovalle.challenge.basic;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class BasicTrial01 {
 
-    public static void runTrial01(){
+    public static void run(){
         BufferedReader br;
         StringTokenizer st;
         int a;

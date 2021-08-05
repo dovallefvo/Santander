@@ -3,7 +3,6 @@ package com.dovalle.classes;
 import com.dovalle.interfaces.Vehicle;
 import com.dovalle.net.MyUrl;
 import com.dovalle.util.*;
-import com.dovalle.trials.*;
 import com.dovalle.database.base.*;
 import com.dovalle.database.entity.*;
 
@@ -19,8 +18,6 @@ public class Initializer {
         processingThreadsAndHttp();
 
         callingStreamsAndLambdas();
-
-        solvingBasicTrials();
 
         makingJDBCConnection();
 
@@ -43,13 +40,6 @@ public class Initializer {
         //JDBC implementation
         var mysqlCon = new MysqlDbConnection();
         mysqlCon.testConnection();
-    }
-
-    private static void solvingBasicTrials() {
-        System.out.println("\n\nBasisc Trial 03. Type the six values in your console:\n");
-        BasicTrial01.runTrial01();
-        BasicTrial02.runTrial02();
-        BasicTrial03.runTrial03Simple();
     }
 
     private static void callingStreamsAndLambdas() {

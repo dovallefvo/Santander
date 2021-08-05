@@ -1,4 +1,4 @@
-package com.dovalle.trials;
+package com.dovalle.challenge.basic;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -11,27 +11,25 @@ import java.util.stream.Collectors;
 public class BasicTrial03 {
     public void basicTrial03(){
         /*
-        Desafio
-Crie um programa que leia 6 valores. Você poderá receber valores negativos e/ou positivos como entrada, devendo desconsiderar os valores nulos. Em seguida, apresente a quantidade de valores positivos digitados.
+        Challenge
+Create a program that reads 6 values. You may receive negative and/or positive values input, but null values be disregarded. Then present the number of positive values entered.
 
-Entrada
-Você receberá seis valores, negativos e/ou positivos.
+Input
+You will receive six values, negative and/or positive.
 
-Saída
-Exiba uma mensagem dizendo quantos valores positivos foram lidos assim como é exibido abaixo no exemplo de saída. Não esqueça da mensagem "valores positivos" ao final.
+Exit
+Display a message saying how many positive values were read as shown below in the output example. Don't forget the "positive values" message at the end.
 
 
-Exemplo de Entrada
+Input example
 7
 -5
 6
 -3.4
 4.6
 12
-Exemplo de Saída
+Output sample
 4 valores positivos
-
-
          */
         List<Double> numbersList = new ArrayList<>();
         int qtdPositiveNumbers = 0;
@@ -58,27 +56,25 @@ Exemplo de Saída
 
     public static void runTrial03Simple(){
         /*
-        Desafio
-Crie um programa que leia 6 valores. Você poderá receber valores negativos e/ou positivos como entrada, devendo desconsiderar os valores nulos. Em seguida, apresente a quantidade de valores positivos digitados.
+        Challenge
+Create a program that reads 6 values. You may receive negative and/or positive values input, but null values be disregarded. Then present the number of positive values entered.
 
-Entrada
-Você receberá seis valores, negativos e/ou positivos.
+Input
+You will receive six values, negative and/or positive.
 
-Saída
-Exiba uma mensagem dizendo quantos valores positivos foram lidos assim como é exibido abaixo no exemplo de saída. Não esqueça da mensagem "valores positivos" ao final.
+Exit
+Display a message saying how many positive values were read as shown below in the output example. Don't forget the "positive values" message at the end.
 
 
-Exemplo de Entrada
+Input example
 7
 -5
 6
 -3.4
 4.6
 12
-Exemplo de Saída
+Output sample
 4 valores positivos
-
-
          */
         int qtdPositiveNumbers = 0;
         int QTD_READING = 6;
