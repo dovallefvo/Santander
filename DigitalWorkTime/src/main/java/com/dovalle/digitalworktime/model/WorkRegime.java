@@ -1,9 +1,11 @@
 package com.dovalle.digitalworktime.model;
 
 import lombok.*;
-import org.hibernate.envers.Audited;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Getter
 @Setter
@@ -12,22 +14,11 @@ import javax.persistence.*;
 @EqualsAndHashCode
 //@Data // this annotation contains all the above lombok annotations
 @Builder
-@Entity
-@Audited
-public class Company {
+public class WorkRegime {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column
-    private String name;
-
-    @Column
-    private String companyNumber;
-
-    @Column
-    private String address;
-
-
+    private String description;
 }
-

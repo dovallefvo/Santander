@@ -4,17 +4,17 @@ import lombok.*;
 import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
-//@Data // this annotation contains all the above lombok annotations
 @Builder
 @Entity
 @Audited
-public class Company {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -22,12 +22,19 @@ public class Company {
     @Column
     private String name;
 
-    @Column
-    private String companyNumber;
+    @ManyToOne
+    private UserCategory userCategory;
 
-    @Column
-    private String address;
+    @ManyToOne
+    private Company company;
 
+    @ManyToOne
+    private AccessLevel accessLevel;
+
+    /*@ManyToOne
+    private WorkRegime workRegime;*/
+
+    /*@OneToMany
+    private List<WorkDay> daysWorked;*/
 
 }
-
