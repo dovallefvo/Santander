@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode
 //@Data // this annotation contains all the above lombok annotations
 @Builder
+@Entity
 public class WorkDay {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

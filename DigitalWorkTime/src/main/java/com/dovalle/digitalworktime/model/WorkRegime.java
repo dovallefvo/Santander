@@ -2,10 +2,7 @@ package com.dovalle.digitalworktime.model;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -14,6 +11,7 @@ import javax.persistence.Id;
 @EqualsAndHashCode
 //@Data // this annotation contains all the above lombok annotations
 @Builder
+@Entity
 public class WorkRegime {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
