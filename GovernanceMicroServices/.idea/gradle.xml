@@ -5,11 +5,41 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ConfigServer" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../Builder/Gradle/gradle-7.1.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ConfigServer" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/GatewayServer" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../Builder/Gradle/gradle-7.1.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/GatewayServer" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/ProductCatalog" />
         <option name="gradleHome" value="$PROJECT_DIR$/../../../../Gradle/gradle-7.1.1" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/ProductCatalog" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ServerDiscovery" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../Builder/Gradle/gradle-7.1.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ServerDiscovery" />
           </set>
         </option>
       </GradleProjectSettings>

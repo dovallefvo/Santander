@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: ServerDiscovery
+
+  cloud:
+    config:
+      #connect on ConfigServer to retrieve the configurarion file
+      uri: http://localhost:8888
+      enable: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: true

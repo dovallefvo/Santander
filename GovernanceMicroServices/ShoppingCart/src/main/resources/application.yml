@@ -1,11 +1,6 @@
-server:
-  port: 8681
-
 spring:
-  data:
-    redis:
-      repositories:
-        enabled: true
-  redis:
-    host: localhost
-    port: 6379
+  application:
+    name: ShoppingCart
+  cloud:
+    config:
+      uri: http://localhost:8888
