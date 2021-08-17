@@ -1,0 +1,65 @@
+body{
+    background: ghostwhite;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;/*Verdana is main, the other are backups*/
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+
+.badge{
+    border: darkgreen;
+    border-radius: 50px;/*arround the image, gets a circle shape*/
+}
+
+#title, .subtitle, .posttitle{/* different elements are separated by comma*/
+    color: black;
+}
+
+#title {
+    font-size: x-large;
+    text-transform: capitalize;
+}
+
+a {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: circle;
+    /*padding-left: 15px;*/
+}
+
+ol {
+    list-style-type: upper-roman;
+    /*padding-left: 15px;*/
+}
+
+.contactlist ul a { /*cascade elements*/
+    text-shadow: grey;
+}
+
+.posttitle{
+    font-size: 16px;
+    font-style: italic;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.post{
+    background-color: beige;    
+    padding: 10px;
+    border: 3px solid gold;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.postcontent{
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.postimage{
+    margin: 0;
+    margin-bottom: 10px;
+}
