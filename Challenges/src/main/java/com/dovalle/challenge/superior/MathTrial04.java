@@ -1,9 +1,6 @@
 package com.dovalle.challenge.superior;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
 public class MathTrial04 {
 
@@ -27,42 +24,67 @@ public class MathTrial04 {
         aA Bb                   abab
         aa bb
         */
-        Scanner myScanner;
-        StringTokenizer st;
+        Scanner myScanner = null;
 
         int qntTexts = 0;
-        Map<Integer, String> mapTexts = new HashMap<>();
+        String firstText = "";
+        String secondText = "";
+        String shuffledWords = "";
 
         try {
             myScanner = new Scanner(System.in);
             qntTexts = Integer.parseInt(myScanner.next());
 
-            st = new StringTokenizer(myScanner.next());
-
             for (int index = 0; index < qntTexts; index++) {
-                shuffleWords(st.nextToken());
+                myScanner = new Scanner(System.in);//comment this line just for tests in Server.
+                firstText = myScanner.next();
+                secondText = myScanner.next();
+                shuffledWords = shuffleWords(firstText, secondText);
+                System.out.println(shuffledWords);
             }
         }
         catch (Exception e){
-            //TODO
+            //shuffle.append(String.format("Error to shuffle words. \nCause: %s \nMessage: %s", e.getCause(), e.getMessage()));
+            System.out.println(String.format("Error to read the text. QntTexts: %s \nFirst Text: %s \nSecond Text: %s", qntTexts, firstText, secondText));
         }
         finally {
-
+            if (myScanner != null){
+                myScanner.close();
+            }
         }
     }
 
-    private static String shuffleWords(String fullText){
-        StringBuilder shuffle = new StringBuilder();
-        String splittedText[] = fullText.split(" ");
-        String firstText = splittedText[0];
-        String secondText = splittedText[1];
+    private static String shuffleWords(String fistText, String secondText){
+        StringBuilder shuffle = new StringBuilder("");
+        try {
+            //String splittedText[] = fullText.split(" ");
+            String firstTxt = fistText;
+            String secondTxt = secondText;
+            int restLength = Math.abs(firstTxt.length() - secondTxt.length());
+            //declare and set by default fist and second text as small and big texts - respectively
+            String smallTxt = fistText;
+            String bigTxt = secondText;
+            //verify whether the first is bigger than second, then change the initial value for small and big text.
+            if(firstTxt.length() >  secondTxt.length()){
+                smallTxt = secondTxt;
+                bigTxt = firstTxt;
+            }
 
-        int smallLength = (splittedText[0].length() >  splittedText[1].length()) ? splittedText[1].length() : splittedText[0].length();
+            //starts the shuffle word by word, always with the first text with second text
+            for (int index = 0; index < smallTxt.length(); index++) {
+                shuffle.append(firstTxt.substring(index, index+1));
+                shuffle.append(secondTxt.substring(index, index+1));
+            }
 
-        for (int index = 0; index < smallLength; index++) {
-            shuffle.append(firstText.substring(index, index+1));
-            shuffle.append(secondText.substring(index, index+1));
+            //verify if exists any rest, then appends its.
+            if (restLength > 0) {
+                shuffle.append(bigTxt.substring(smallTxt.length(), bigTxt.length()));
+            }
         }
+        catch (Exception e){
+            shuffle.append(String.format("Error to shuffle words. \nCause: %s \nMessage: %s", e.getCause(), e.getMessage()));
+        }
+
         return shuffle.toString();
     }
 }
