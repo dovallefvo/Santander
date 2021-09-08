@@ -1,7 +1,11 @@
 # BasiczAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.2.
-
+BasiczAngular has done in Angular (Node.js) and its objective is show the concepts about components, modules and programming with Angular.
+### Tecnologies used:
+* Framework: **Node.js - Angular (version 12.2.2)**;
+* Build: **Gradle**;
+* Documentation: **Swagger**.
+<br><br><br><br>
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
